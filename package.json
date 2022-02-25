@@ -1,0 +1,42 @@
+{
+  "name": "@andrewhan/portal",
+  "version": "0.0.1",
+  "description": "A React component for portals.",
+  "main": "build/portal.js",
+  "scripts": {
+    "build": "npx babel Portal.tsx --out-file build/portal.js",
+    "prepublish": "npm run build",
+    "publish": "npm publish",
+    "clean": "rm -R build/"
+  },
+  "author": "Andrew Han",
+  "license": "MIT",
+  "publishConfig": {
+    "@andrewthehan:registry": "https://npm.pkg.github.com"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.17.6",
+    "@babel/core": "^7.17.5",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react": "^7.16.7",
+    "@babel/preset-typescript": "^7.16.7",
+    "core-js": "^3.21.1"
+  },
+  "peerDependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/env",
+        {
+          "useBuiltIns": "usage",
+          "corejs": 3
+        }
+      ],
+      "@babel/react",
+      "@babel/preset-typescript"
+    ]
+  }
+}
